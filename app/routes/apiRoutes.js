@@ -1,5 +1,5 @@
 
-var friendListData = require("../data/friendlistData");
+var friendListData = require("../data/friends");
 
 
 module.exports = function(app) {
@@ -10,10 +10,9 @@ module.exports = function(app) {
 
 
   app.post("/api/friend", function(req, res) {
-    if (friendListData.length < 5) {
-      tfriendListData.push(req.body);
+
+      friendListData.push(req.body);
       res.json(true);
-    }
     // else {
     //   waitListData.push(req.body);
     //   res.json(false);
